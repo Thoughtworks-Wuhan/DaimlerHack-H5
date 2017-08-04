@@ -5,13 +5,22 @@ import "./AssessedValueCard.css";
 const duration = 300;
 
 const defaultStyle = {
-  transition: `opacity ${duration}ms ease-in-out`,
-  opacity: 0
+  transitionTimingFunction: "ease-in",
+  transition: `${duration}ms`,
+  transform: "translateX(200%)"
 };
 
 const transitionStyles = {
-  entering: { opacity: 1 },
-  entered: { opacity: 1 }
+  entering: {
+    transitionTimingFunction: "ease-out",
+    transition: `${duration}ms`,
+    transform: "translateX(0)"
+  },
+  entered: {
+    transitionTimingFunction: "ease-out",
+    transition: `${duration}ms`,
+    transform: "translateX(0)"
+  }
 };
 
 class AssessedValueCard extends PureComponent {
