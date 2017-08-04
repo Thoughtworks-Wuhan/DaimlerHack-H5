@@ -5,9 +5,9 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <Grid fluid>
-          <Row>
+          <Row className="hack-row">
             <Col xs={4}>
               <label htmlFor="">车型选择</label>
             </Col>
@@ -15,7 +15,7 @@ class App extends Component {
               <input type="text" />
             </Col>
           </Row>
-          <Row>
+          <Row className="hack-row">
             <Col xs={4}>
               <label htmlFor="">车型选择</label>
             </Col>
@@ -23,7 +23,7 @@ class App extends Component {
               <input type="text" />
             </Col>
           </Row>
-          <Row>
+          <Row className="hack-row">
             <Col xs={4}>
               <label htmlFor="">车型选择</label>
             </Col>

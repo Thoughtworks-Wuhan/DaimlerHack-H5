@@ -1,12 +1,37 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App input, .App label {
-  display: inline-block;
-  width: 100%;
+.app .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.App label {
-  text-align: left;
+.hack-row {
+  border-bottom: 1px solid #efeeee;
+}
+
+.app input,
+.app label {
+  display: inline-block;
+  width: 100%;
+  line-height: 32px;
+}
+
+.app label { 
+  color: #666;
+}
+.app input {
+  border: none;
+  margin-right: 5px;
+  outline: none;
+}
+
+.app button {
+  width: 100%;
+  background: #FF5722;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 0 5px;
 }
