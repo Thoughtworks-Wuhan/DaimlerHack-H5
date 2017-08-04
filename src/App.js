@@ -1,18 +1,43 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Grid, Row, Col } from "react-flexbox-grid";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Grid fluid>
+          <Row>
+            <Col xs={4}>
+              <label htmlFor="">车型选择</label>
+            </Col>
+            <Col xs={8}>
+              <input type="text" />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={4}>
+              <label htmlFor="">车型选择</label>
+            </Col>
+            <Col xs={8}>
+              <input type="text" />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={4}>
+              <label htmlFor="">车型选择</label>
+            </Col>
+            <Col xs={8}>
+              <input type="text" />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <button>估值</button>
+            </Col>
+          </Row>
+        </Grid>
+        <div />
       </div>
     );
   }
