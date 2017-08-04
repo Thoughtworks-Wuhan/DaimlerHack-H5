@@ -8,6 +8,11 @@ class App extends Component {
       <div className="app">
         <Grid fluid>
           <Row className="hack-row">
+            <Col xs={12}>
+            <h1>二手车估值</h1>
+            </Col>
+          </Row>
+          <Row className="hack-row">
             <Col xs={4}>
               <label htmlFor="">车型选择</label>
             </Col>
