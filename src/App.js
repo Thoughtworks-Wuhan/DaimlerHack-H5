@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
-import Home from "./components/Home";
-import CarChoose from "./components/CarChoose";
+import Home from "./containers/Home";
+import CarChoose from "./containers/CarChoose";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 

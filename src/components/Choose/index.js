@@ -5,62 +5,43 @@ import classnames from "classnames";
 import { connect } from "react-redux";
 import { RadioGroup, Radio } from "react-radio-group";
 import { BrowserRouter as Router, Route, Link }from "react-router-dom";
-import { addCarType } from "../../actions";
-import "./CarChoose.css";
+import "./Choose.css";
 
-const mapStateToProps = state => {
-  const carTypes = ["奔驰", "宝马"];
-  return {
-    carType: state.carType,
-    carTypes
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    addCarType: id => {
-      dispatch(addCarType(id))
-    }
-  }
-};
-
-class CarChoose extends Component {
+class Choose extends Component {
   constructor(props) {
     super(props);
-    this.state = { carType: "奔驰" };
   }
 
   handleChange = value => {
-    this.setState({ carType: value });
-    this.props.addCarType(value);
+    this.props.select(value);
   };
 
   render() {
     return (
-      <div className="car-choose">
+      <div className="choose">
         <Grid fluid>
           <Row>
             <Col xs={12}>
-              <h4>请选择你的车型</h4>
+              <h4>{this.props.title}</h4>
             </Col>
           </Row>
           <Row>
             <Col xs={12}>
               <RadioGroup
-                name="carType"
-                selectedValue={this.state.carType}
+                name={this.props.name}
+                selectedValue={this.props.selectedOption}
                 onChange={this.handleChange}
               >
                 <ul>
-                  {this.props.carTypes.map(carType =>
-                    <li key={carType}>
+                  {this.props.options.map(option =>
+                    <li key={option}>
                       <label
                         className={classnames({
-                          active: this.state.carType === carType
+                          active: this.props.selectedOption === option
                         })}
                       >
-                        <Radio value={carType} />
-                        {carType}
+                        <Radio value={option} />
+                        {option}
                       </label>
                     </li>
                   )}
@@ -81,4 +62,4 @@ class CarChoose extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CarChoose);
+export default Choose;
