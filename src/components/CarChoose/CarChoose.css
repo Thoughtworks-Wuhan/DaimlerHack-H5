@@ -26,6 +26,8 @@
 .car-choose ul li label {
   display: block;
   border: 1px dashed transparent;
+  line-height: 32px;
+  padding-left: 10px;
 }
 
 .car-choose ul li .active {
