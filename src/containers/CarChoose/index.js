@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import { addCarType } from "../../actions";
@@ -16,8 +15,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    select: id => {
-      dispatch(addCarType(id));
+    select: carType => {
+      dispatch(addCarType(carType));
     }
   };
 };

@@ -8,6 +8,14 @@ const hack = (state = defaultState, action) => {
       return Object.assign({}, state, {
         carType: action.value
       });
+    case "SET_YEAR":
+      return Object.assign({}, state, {
+        year: action.value
+      });
+    case "SET_MONTH":
+      return Object.assign({}, state, {
+        month: action.value
+      });
     default:
       return state;
   }

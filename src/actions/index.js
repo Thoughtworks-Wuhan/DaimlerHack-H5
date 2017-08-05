@@ -4,3 +4,17 @@ export const addCarType = value => {
     value
   }
 }
+
+export const setYear = value => {
+  return {
+    type: 'SET_YEAR',
+    value
+  }
+}
+
+export const setMonth = value => {
+  return {
+    type: 'SET_MONTH',
+    value
+  }
+}

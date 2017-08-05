@@ -4,13 +4,27 @@ import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import AssessedValueCard from "../../components/AssessedValueCard";
+import { setYear, setMonth } from "../../actions";
 
 import "./Home.css";
 import "font-awesome/css/font-awesome.css";
 
 const mapStateToProps = state => {
   return {
-    carType: state.carType
+    carType: state.carType,
+    year: state.year,
+    month: state.month
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setYear: year => {
+      dispatch(setYear(year));
+    },
+    setMonth: month => {
+      dispatch(setMonth(month));
+    }
   };
 };
 
@@ -28,6 +42,14 @@ class Home extends Component {
     });
   };
 
+  handleSetYear = (e) => {
+    this.props.setYear(e.target.value);
+  }
+
+  handleSetMonth = (e) => {
+    this.props.setMonth(e.target.value);
+  }
+
   render() {
     return (
       <div className="home">
@@ -44,7 +66,9 @@ class Home extends Component {
             <Col xs={8}>
               <Link to="/car-choose">
                 <div className="hack-select-button">
-                  <span className="car-type">{this.props.carType}</span>
+                  <span className="car-type">
+                    {this.props.carType}
+                  </span>
                   <i className="fa fa-angle-right" aria-hidden="true" />
                 </div>
               </Link>
@@ -64,11 +88,21 @@ class Home extends Component {
               <label htmlFor="">使用年限</label>
             </Col>
             <Col xs={4} className="hack-col">
-              <input className="text-input" type="text" />
+              <input
+                className="text-input"
+                type="text"
+                onChange={this.handleSetYear}
+                value={this.props.year}
+              />
               <span className="year">年</span>
             </Col>
             <Col xs={4} className="hack-col">
-              <input className="text-input" type="text" />
+              <input
+                className="text-input"
+                type="text"
+                onChange={this.handleSetMonth}
+                value={this.props.month}
+              />
               <span className="month">月</span>
             </Col>
           </Row>
@@ -88,4 +122,4 @@ class Home extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
