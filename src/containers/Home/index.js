@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
-import AssessedValueCard from "../../components/AssessedValueCard";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import AssessedValueCard from "../../components/AssessedValueCard";
 
 import "./Home.css";
 import "font-awesome/css/font-awesome.css";

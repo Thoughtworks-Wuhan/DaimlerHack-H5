@@ -4,7 +4,8 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 import classnames from "classnames";
 import { connect } from "react-redux";
 import { RadioGroup, Radio } from "react-radio-group";
-import { BrowserRouter as Router, Route, Link }from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import "./Choose.css";
 
 class Choose extends Component {
@@ -22,7 +23,9 @@ class Choose extends Component {
         <Grid fluid>
           <Row>
             <Col xs={12}>
-              <h4>{this.props.title}</h4>
+              <h4>
+                {this.props.title}
+              </h4>
             </Col>
           </Row>
           <Row>
