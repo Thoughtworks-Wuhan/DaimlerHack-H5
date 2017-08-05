@@ -42,13 +42,17 @@ class Home extends Component {
     });
   };
 
-  handleSetYear = (e) => {
-    this.props.setYear(e.target.value);
-  }
+  handleSetYear = e => {
+    if (/^\d+$/.test(e.target.value)) {
+      this.props.setYear(e.target.value);
+    }
+  };
 
-  handleSetMonth = (e) => {
-    this.props.setMonth(e.target.value);
-  }
+  handleSetMonth = e => {
+    if (/^\d+$/.test(e.target.value)) {
+      this.props.setMonth(e.target.value);
+    }
+  };
 
   render() {
     return (
@@ -89,6 +93,7 @@ class Home extends Component {
             </Col>
             <Col xs={4} className="hack-col">
               <input
+                maxLength="2"
                 className="text-input"
                 type="text"
                 onChange={this.handleSetYear}
@@ -98,6 +103,7 @@ class Home extends Component {
             </Col>
             <Col xs={4} className="hack-col">
               <input
+                maxLength="2"
                 className="text-input"
                 type="text"
                 onChange={this.handleSetMonth}
