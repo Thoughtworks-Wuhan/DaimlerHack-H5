@@ -1,0 +1,55 @@
+.home {
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 24px;
+}
+
+.home .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.home .row {
+  margin: 0;
+}
+
+.hack-row {
+  border-bottom: 1px solid #efeeee;
+}
+
+.hack-select-button {
+  text-align: right;
+  line-height: 32px;
+}
+.hack-select-button .fa {
+  font-size: 18px;
+  margin-right: 10px;
+}
+.home .text-input,
+.home label {
+  display: inline-block;
+  width: 100%;
+  line-height: 32px;
+}
+
+.home label {
+  color: #666;
+}
+.home .text-input {
+  border: none;
+  margin-right: 5px;
+  outline: none;
+}
+
+.home button {
+  width: 90%;
+  background: #ff5722;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  margin-top: 20px;
+  line-height: 32px;
+}
