@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import AssessedValueCard from "../AssessedValueCard";
+import { connect } from "react-redux";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "./Home.css";
 import "font-awesome/css/font-awesome.css";
+
+const mapStateToProps = state => {
+  return {
+    carType: '' 
+  };
+};
 
 class Home extends Component {
   constructor(props) {
@@ -72,4 +79,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default connect(mapStateToProps)(Home);
