@@ -9,6 +9,10 @@
   line-height: 32px;
 }
 
+.choose .container-fluid {
+  padding: 0 20px;
+}
+
 .choose ul {
   list-style-type: none;
   padding-left: 0;

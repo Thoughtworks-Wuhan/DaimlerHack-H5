@@ -56,11 +56,18 @@
 .car-type {
   float: left;
   color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
 }
 
 .hack-select-button .fa {
   font-size: 18px;
   margin-right: 10px;
+  position: absolute;
+  right: 5px;
+  top: 10px;
 }
 .home .text-input,
 .home label {

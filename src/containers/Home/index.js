@@ -92,11 +92,11 @@ class Home extends Component {
               <h1>智能二手车估值</h1>
             </Col>
           </Row>
-          <Row className="hack-row">
-            <Col xs={4}>
+          <Row className="hack-row hack-input-row">
+            <Col xs={3}>
               <label htmlFor="">车型选择</label>
             </Col>
-            <Col xs={8}>
+            <Col xs={9}>
               <Link to="/car-choose">
                 <div className="hack-select-button">
                   <span className="car-type">
@@ -108,10 +108,10 @@ class Home extends Component {
             </Col>
           </Row>
           <Row className="hack-row hack-input-row">
-            <Col xs={4}>
+            <Col xs={3}>
               <label htmlFor="">行驶里程</label>
             </Col>
-            <Col xs={8}>
+            <Col xs={9}>
               <input
                 className="text-input"
                 value={this.props.roadHaul}
@@ -122,10 +122,10 @@ class Home extends Component {
             </Col>
           </Row>
           <Row className="hack-row hack-input-row">
-            <Col xs={4}>
+            <Col xs={3}>
               <label htmlFor="">使用年限</label>
             </Col>
-            <Col xs={4} className="hack-col">
+            <Col xs={5} className="hack-col">
               <input
                 maxLength="2"
                 className="text-input"
@@ -147,10 +147,10 @@ class Home extends Component {
             </Col>
           </Row>
           <Row className="hack-row hack-input-row">
-            <Col xs={4}>
+            <Col xs={3}>
               <label htmlFor="">保险到期</label>
             </Col>
-            <Col xs={4} className="hack-col">
+            <Col xs={5} className="hack-col">
               <input
                 maxLength="2"
                 className="text-input"

@@ -1,5 +1,5 @@
 const defaultState = {
-  carType: "奔驰",
+  carType: "奔驰GLA级 2015款 GLA 200 时尚型",
   year: "",
   month: "",
   insuranceYear: "",
