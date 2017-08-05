@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import AssessedValueCard from "../../components/AssessedValueCard";
-import { setYear, setMonth, setRoadHaul } from "../../actions";
+import { setYear, setMonth, setRoadHaul, setInsuranceYear, setInsuranceMonth } from "../../actions";
 
 import "./Home.css";
 import "font-awesome/css/font-awesome.css";
@@ -13,7 +13,9 @@ const mapStateToProps = state => {
   return {
     carType: state.carType,
     year: state.year,
-    month: state.month
+    month: state.month,
+    insuranceYear: state.insuranceYear,
+    insuranceMonth: state.insuranceMonth
   };
 };
 
@@ -27,6 +29,12 @@ const mapDispatchToProps = dispatch => {
     },
     setMonth: month => {
       dispatch(setMonth(month));
+    },
+    setInsuranceYear: year => {
+      dispatch(setInsuranceYear(year));
+    },
+    setInsuranceMonth: month => {
+      dispatch(setInsuranceMonth(month));
     }
   };
 };
@@ -54,6 +62,18 @@ class Home extends Component {
   handleSetMonth = e => {
     if (/^\d*$/.test(e.target.value)) {
       this.props.setMonth(e.target.value);
+    }
+  };
+
+  handleSetinsuranceYear = e => {
+    if (/^\d*$/.test(e.target.value)) {
+      this.props.setInsuranceYear(e.target.value);
+    }
+  };
+
+  handleSetinsuranceMonth = e => {
+    if (/^\d*$/.test(e.target.value)) {
+      this.props.setInsuranceMonth(e.target.value);
     }
   };
 
@@ -122,6 +142,31 @@ class Home extends Component {
                 type="text"
                 onChange={this.handleSetMonth}
                 value={this.props.month}
+              />
+              <span className="month">月</span>
+            </Col>
+          </Row>
+          <Row className="hack-row hack-input-row">
+            <Col xs={4}>
+              <label htmlFor="">保险到期</label>
+            </Col>
+            <Col xs={4} className="hack-col">
+              <input
+                maxLength="2"
+                className="text-input"
+                type="text"
+                onChange={this.handleSetinsuranceYear}
+                value={this.props.insuranceYear}
+              />
+              <span className="year">年</span>
+            </Col>
+            <Col xs={4} className="hack-col">
+              <input
+                maxLength="2"
+                className="text-input"
+                type="text"
+                onChange={this.handleSetinsuranceMonth}
+                value={this.props.insuranceMonth}
               />
               <span className="month">月</span>
             </Col>
