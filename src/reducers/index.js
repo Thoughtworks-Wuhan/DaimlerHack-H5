@@ -1,7 +1,8 @@
 const defaultState = {
   carType: "奔驰",
   year: "",
-  month: ""
+  month: "",
+  roadHaul: ""
 };
 
 const hack = (state = defaultState, action) => {
@@ -17,6 +18,11 @@ const hack = (state = defaultState, action) => {
     case "SET_MONTH":
       return Object.assign({}, state, {
         month: action.value
+      });
+
+    case "SET_ROAD_HAUL":
+      return Object.assign({}, state, {
+        roadHaul: action.value
       });
     default:
       return state;

@@ -18,3 +18,10 @@ export const setMonth = value => {
     value
   }
 }
+
+export const setRoadHaul = value => {
+  return {
+    type: 'SET_ROAD_HAUL',
+    value
+  }
+}

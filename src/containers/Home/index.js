@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import AssessedValueCard from "../../components/AssessedValueCard";
-import { setYear, setMonth } from "../../actions";
+import { setYear, setMonth, setRoadHaul } from "../../actions";
 
 import "./Home.css";
 import "font-awesome/css/font-awesome.css";
@@ -19,6 +19,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    setRoadHaul: roadHaul => {
+      dispatch(setRoadHaul(roadHaul));
+    },
     setYear: year => {
       dispatch(setYear(year));
     },
@@ -43,14 +46,20 @@ class Home extends Component {
   };
 
   handleSetYear = e => {
-    if (/^\d+$/.test(e.target.value)) {
+    if (/^\d*$/.test(e.target.value)) {
       this.props.setYear(e.target.value);
     }
   };
 
   handleSetMonth = e => {
-    if (/^\d+$/.test(e.target.value)) {
+    if (/^\d*$/.test(e.target.value)) {
       this.props.setMonth(e.target.value);
+    }
+  };
+
+  handleSetRoadHaul = e => {
+    if (/^\d*$/.test(e.target.value)) {
+      this.props.setRoadHaul(e.target.value);
     }
   };
 
@@ -83,7 +92,12 @@ class Home extends Component {
               <label htmlFor="">行驶里程</label>
             </Col>
             <Col xs={8}>
-              <input className="text-input" type="text" />
+              <input
+                className="text-input"
+                value={this.props.roadHaul}
+                type="text"
+                onChange={this.handleSetRoadHaul}
+              />
               <span className="unit">公里</span>
             </Col>
           </Row>
