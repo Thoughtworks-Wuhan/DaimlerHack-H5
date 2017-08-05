@@ -25,7 +25,25 @@
 
 .unit {
   position: absolute;
-  top: 8px;
+  top: 9px;
+  right: 16px;
+  color: #666;
+}
+
+.hack-col {
+  position: relative;
+}
+
+.year {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  color: #666;
+}
+
+.month {
+  position: absolute;
+  top: 9px;
   right: 16px;
   color: #666;
 }

@@ -59,6 +59,19 @@ class Home extends Component {
               <span className="unit">公里</span>
             </Col>
           </Row>
+          <Row className="hack-row hack-input-row">
+            <Col xs={4}>
+              <label htmlFor="">使用年限</label>
+            </Col>
+            <Col xs={4} className="hack-col">
+              <input className="text-input" type="text" />
+              <span className="year">年</span>
+            </Col>
+            <Col xs={4} className="hack-col">
+              <input className="text-input" type="text" />
+              <span className="month">月</span>
+            </Col>
+          </Row>
           <Row>
             <Col xs={12}>
               <button onClick={this.handleAssess}>估值</button>
