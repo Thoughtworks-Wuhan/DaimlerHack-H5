@@ -31,6 +31,11 @@ class CarChoose extends Component {
         <Grid fluid>
           <Row>
             <Col xs={12}>
+              <h4>请选择你的车型</h4>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
               <RadioGroup
                 name="carType"
                 selectedValue={this.state.carType}
