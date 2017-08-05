@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import classnames from "classnames";
 import { RadioGroup, Radio } from "react-radio-group";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import "./Choose.css";
 
-class Choose extends Component {
+class Choose extends PureComponent {
 
   handleChange = value => {
     this.props.select(value);
