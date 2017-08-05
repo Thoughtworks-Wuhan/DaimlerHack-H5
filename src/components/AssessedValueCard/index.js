@@ -27,7 +27,6 @@ class AssessedValueCard extends PureComponent {
   render() {
     return (
       <div className="card">
-        <h2>你的汽车估值是</h2>
         <Transition in={this.props.assessedValue > 0} timeout={duration}>
           {state =>
             <div
@@ -35,9 +34,11 @@ class AssessedValueCard extends PureComponent {
                 ...defaultStyle,
                 ...transitionStyles[state]
               }}
-              className="card-value"
             >
-              参考价格：{this.props.assessedValue} 元
+              <h2>你的汽车估值是</h2>
+              <div className="card-value">
+                参考价格：{this.props.assessedValue} 元
+              </div>
             </div>}
         </Transition>
       </div>
