@@ -1,17 +1,12 @@
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import classnames from "classnames";
-import { connect } from "react-redux";
 import { RadioGroup, Radio } from "react-radio-group";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Choose.css";
 
 class Choose extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   handleChange = value => {
     this.props.select(value);

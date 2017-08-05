@@ -1,16 +1,12 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from "react-flexbox-grid";
 import Home from "./containers/Home";
 import CarChoose from "./containers/CarChoose";
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./App.css";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

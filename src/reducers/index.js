@@ -1,5 +1,7 @@
 const defaultState = {
-  carType: "奔驰"
+  carType: "奔驰",
+  year: "",
+  month: ""
 };
 
 const hack = (state = defaultState, action) => {
