@@ -1,0 +1,10 @@
+.car-choose button {
+  width: 90%;
+  background: #ff5722;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  margin-top: 20px;
+  line-height: 32px;
+}
