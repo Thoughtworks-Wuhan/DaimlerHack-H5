@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { bindActionCreators } from "redux";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import classnames from "classnames";
 import { connect } from "react-redux";
 import { RadioGroup, Radio } from "react-radio-group";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import { BrowserRouter as Router, Route, Link }from "react-router-dom";
+import { addCarType } from "../../actions";
 import "./CarChoose.css";
 
 const mapStateToProps = state => {
@@ -15,6 +16,14 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    addCarType: id => {
+      dispatch(addCarType(id))
+    }
+  }
+};
+
 class CarChoose extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +32,7 @@ class CarChoose extends Component {
 
   handleChange = value => {
     this.setState({ carType: value });
+    this.props.addCarType(value);
   };
 
   render() {
@@ -43,7 +53,7 @@ class CarChoose extends Component {
               >
                 <ul>
                   {this.props.carTypes.map(carType =>
-                    <li>
+                    <li key={carType}>
                       <label
                         className={classnames({
                           active: this.state.carType === carType
@@ -71,4 +81,4 @@ class CarChoose extends Component {
   }
 }
 
-export default connect(mapStateToProps)(CarChoose);
+export default connect(mapStateToProps, mapDispatchToProps)(CarChoose);
