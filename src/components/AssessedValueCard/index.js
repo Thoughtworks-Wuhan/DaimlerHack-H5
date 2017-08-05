@@ -37,7 +37,7 @@ class AssessedValueCard extends PureComponent {
               }}
               className="card-value"
             >
-              参考价格：{this.props.assessedValue}
+              参考价格：{this.props.assessedValue} 元
             </div>}
         </Transition>
       </div>
