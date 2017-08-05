@@ -19,10 +19,27 @@
   border-bottom: 1px solid #efeeee;
 }
 
+.hack-input-row {
+  position: relative;
+}
+
+.unit {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  color: #666;
+}
+
 .hack-select-button {
   text-align: right;
   line-height: 38px;
 }
+
+.car-type {
+  float: left;
+  color: #666;
+}
+
 .hack-select-button .fa {
   font-size: 18px;
   margin-right: 10px;
@@ -41,6 +58,7 @@
   border: none;
   margin-right: 5px;
   outline: none;
+  font-size: 16px;
 }
 
 .home button {

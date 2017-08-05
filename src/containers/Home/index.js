@@ -10,7 +10,7 @@ import "font-awesome/css/font-awesome.css";
 
 const mapStateToProps = state => {
   return {
-    carType: ""
+    carType: state.carType
   };
 };
 
@@ -44,25 +44,19 @@ class Home extends Component {
             <Col xs={8}>
               <Link to="/car-choose">
                 <div className="hack-select-button">
+                  <span className="car-type">{this.props.carType}</span>
                   <i className="fa fa-angle-right" aria-hidden="true" />
                 </div>
               </Link>
             </Col>
           </Row>
-          <Row className="hack-row">
+          <Row className="hack-row hack-input-row">
             <Col xs={4}>
-              <label htmlFor="">车型选择</label>
+              <label htmlFor="">行驶里程</label>
             </Col>
             <Col xs={8}>
               <input className="text-input" type="text" />
-            </Col>
-          </Row>
-          <Row className="hack-row">
-            <Col xs={4}>
-              <label htmlFor="">车型选择</label>
-            </Col>
-            <Col xs={8}>
-              <input className="text-input" type="text" />
+              <span className="unit">公里</span>
             </Col>
           </Row>
           <Row>
