@@ -69,7 +69,7 @@ class Home extends Component {
         <Grid fluid>
           <Row className="hack-row">
             <Col xs={12}>
-              <h1>二手车估值</h1>
+              <h1>智能二手车估值</h1>
             </Col>
           </Row>
           <Row className="hack-row">
