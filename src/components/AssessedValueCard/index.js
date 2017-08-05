@@ -35,7 +35,7 @@ class AssessedValueCard extends PureComponent {
                 ...transitionStyles[state]
               }}
             >
-              <h2>你的汽车估值是</h2>
+              <h2>您的汽车估值是</h2>
               <div className="card-value">
                 参考价格：{this.props.assessedValue} 元
               </div>
