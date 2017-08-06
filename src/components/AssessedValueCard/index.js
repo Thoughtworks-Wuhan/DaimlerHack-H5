@@ -2,24 +2,23 @@ import React, { PureComponent } from "react";
 import Transition from "react-transition-group/Transition";
 import "./AssessedValueCard.css";
 
-const duration = 300;
+const duration = 500;
 
 const defaultStyle = {
-  transitionTimingFunction: "ease-in",
+  position: "absolute",
+  left: "-100%",
   transition: `${duration}ms`,
-  transform: "translateX(200%)"
+  width: "100%"
 };
 
 const transitionStyles = {
   entering: {
-    transitionTimingFunction: "ease-out",
     transition: `${duration}ms`,
-    transform: "translateX(0)"
+    left: 0
   },
   entered: {
-    transitionTimingFunction: "ease-out",
     transition: `${duration}ms`,
-    transform: "translateX(0)"
+    left: 0
   }
 };
 

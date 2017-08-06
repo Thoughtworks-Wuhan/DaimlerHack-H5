@@ -14,6 +14,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Home} />
           <Route exact path="/car-choose" component={CarChoose} />
+          <footer>ThoughtWorks</footer>
         </div>
       </Router>
     );
