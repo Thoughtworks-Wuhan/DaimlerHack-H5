@@ -1,4 +1,4 @@
-var request = require("request");
+var request = require("sync-request");
 var url = require("url");
 var crypto = require("crypto");
 
@@ -19,7 +19,7 @@ const sha1 = function(stringToSign, secret) {
     .toString("base64"));
 };
 
-module.exports = body => {
+module.exports = (body) => {
   var date = new Date().toUTCString();
   // 这里填写AK和请求
   var ak_id = "LTAIVNsDfkqFBhG9";
@@ -28,28 +28,7 @@ module.exports = body => {
     url:
       "https://dtplus-cn-shanghai.data.aliyuncs.com/dt_ng_1747801636299161/pai/prediction/projects/daimler_hack/onlinemodels/xlab_m_linearregressio_684991_v1",
     method: "POST",
-    body: JSON.stringify({
-      inputs: [
-        {
-          roal_haul: {
-            dataType: 40,
-            dataValue: 0.1036
-          },
-          new_price: {
-            dataType: 40,
-            dataValue: 0.102
-          },
-          use_date: {
-            dataType: 40,
-            dataValue: 0.254
-          },
-          insurance_date: {
-            dataType: 40,
-            dataValue: 0.198
-          }
-        }
-      ]
-    }),
+    body: JSON.stringify(body),
     headers: {
       accept: "application/json",
       "content-type": "application/json",
@@ -89,11 +68,6 @@ module.exports = body => {
   options.headers.Authorization = authHeader;
   console.log("authHeader", authHeader);
   // step4: send request
-  function callback(error, response, body) {
-    if (error) {
-      console.log("error", error);
-    }
-    console.log("step4-response body:", response.statusCode, body);
-  }
-  request(options, callback);
+  var res = request('POST', 'https://dtplus-cn-shanghai.data.aliyuncs.com/dt_ng_1747801636299161/pai/prediction/projects/daimler_hack/onlinemodels/xlab_m_linearregressio_684991_v1',options);
+  return JSON.parse(res.getBody('utf8'));
 };
