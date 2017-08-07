@@ -2,9 +2,16 @@ import React, { Component } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import AssessedValueCard from "../../components/AssessedValueCard";
-import { setYear, setMonth, setRoadHaul, setInsuranceYear, setInsuranceMonth } from "../../actions";
+import {
+  setYear,
+  setMonth,
+  setRoadHaul,
+  setInsuranceYear,
+  setInsuranceMonth
+} from "../../actions";
 
 import "./Home.css";
 import "font-awesome/css/font-awesome.css";
@@ -48,6 +55,35 @@ class Home extends Component {
   }
 
   handleAssess = () => {
+    axios
+      .post("http://localhost:5555/estimate", {
+        inputs: [
+          {
+            roal_haul: {
+              dataType: 40,
+              dataValue: 0.1036
+            },
+            new_price: {
+              dataType: 40,
+              dataValue: 0.102
+            },
+            use_date: {
+              dataType: 40,
+              dataValue: 0.254
+            },
+            insurance_date: {
+              dataType: 40,
+              dataValue: 0.198
+            }
+          }
+        ]
+      })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
     this.setState({
       assessedValue: 50000
     });

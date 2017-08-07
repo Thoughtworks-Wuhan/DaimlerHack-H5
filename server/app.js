@@ -14,17 +14,8 @@ app.use(
 );
 app.use(cors());
 
-function callback(error, response, body) {
-  if (error) {
-    console.log("error", error);
-  }
-  console.log("step4-response body:", response.statusCode, body);
-}
-
 app.post("/estimate", function(req, res) {
-  const response = estimate(req.body);
-  console.log(response);
-  res.send(response)
+  res.send(estimate(req.body));
 });
 
 app.listen(5555, function() {
