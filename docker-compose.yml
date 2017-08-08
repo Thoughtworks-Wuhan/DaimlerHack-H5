@@ -4,3 +4,7 @@ services:
     build: .
     ports:
      - "8080:80"
+  node:
+    build: ./server
+    ports: 
+     - "5555:5555"   
