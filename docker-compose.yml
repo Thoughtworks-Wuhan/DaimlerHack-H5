@@ -4,7 +4,9 @@ services:
     build: .
     ports:
      - "8080:80"
-  node:
+    image: benweizhu/hackh5
+  proxy:
     build: ./server
     ports: 
      - "5555:5555"   
+    image: benweizhu/hackh5proxy 
