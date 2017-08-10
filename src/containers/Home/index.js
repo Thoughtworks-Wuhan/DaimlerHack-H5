@@ -16,8 +16,8 @@ import {
 import "./Home.css";
 import "font-awesome/css/font-awesome.css";
 
-const USER_DATE_MAX = 119;
-const USER_DATE_MIN = 0;
+const USE_DATE_MAX = 119;
+const USE_DATE_MIN = 0;
 
 const ROAD_HAUL_MAX = 35;
 const ROAD_HAUL_MIN = 0;
@@ -31,10 +31,13 @@ const GEAR_BOX_MIN = 0;
 const NEW_PRICE_MAX = 576;
 const NEW_PRICE_MIN = 0;
 
+const BRAND_INDEX_MAX = 139;
+const BRAND_INDEX_MIN = 0;
+
 const mapStateToProps = state => {
   const normalizedUseDate =
-    (state.year * 12 + state.month - USER_DATE_MAX) /
-    (USER_DATE_MAX - USER_DATE_MIN);
+    (state.year * 12 + state.month - USE_DATE_MAX) /
+    (USE_DATE_MAX - USE_DATE_MIN);
 
   const normalizedInsuranceDate =
     (state.insuranceYear * 12 + state.insuranceMonth - INSURANCE_DATE_MAX) /
@@ -50,7 +53,12 @@ const mapStateToProps = state => {
 
   const selectedGear = state.gears.find(gear => gear.title === state.gearType);
 
-  const normalizedGearBox = (selectedGear.value - GEAR_BOX_MAX) / (GEAR_BOX_MAX - GEAR_BOX_MIN);
+  const normalizedGearBox =
+    (selectedGear.value - GEAR_BOX_MAX) / (GEAR_BOX_MAX - GEAR_BOX_MIN);
+
+  const normalizedBrandIndex =
+    (selectedCar.brandIndex - BRAND_INDEX_MAX) /
+    (BRAND_INDEX_MAX - BRAND_INDEX_MIN);
 
   return {
     carType: state.carType,
@@ -78,9 +86,13 @@ const mapStateToProps = state => {
             dataType: 40,
             dataValue: normalizedInsuranceDate
           },
-          gear_box: {
+          gearbox: {
             dateType: 40,
             dataValue: normalizedGearBox
+          },
+          brand_index: {
+            dataType: 40,
+            dataValue: normalizedBrandIndex
           }
         }
       ]
@@ -210,7 +222,7 @@ class Home extends Component {
                 type="text"
                 onChange={this.handleSetRoadHaul}
               />
-              <span className="unit">公里</span>
+              <span className="unit">万公里</span>
             </Col>
           </Row>
           <Row className="hack-row hack-input-row">

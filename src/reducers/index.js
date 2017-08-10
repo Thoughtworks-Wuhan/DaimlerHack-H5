@@ -1,12 +1,13 @@
 const defaultState = {
-  carType: "奔驰GLA级 2015款 GLA 200 时尚型",
+  carType: "奔驰",
   gearType: "手动",
   cars: [
-    { title: "奔驰GLA级 2015款 GLA 200 时尚型", newPrice: 12 },
-    { title: "马自达CX-5 2015款 2.0L 手动两驱舒适型", newPrice: 12 },
-    { title: "本田XR-V 2015款 1.8L VTi CVT豪华版", newPrice: 12 },
-    { title: "奥迪Q5 2013款 40 TFSI 技术型", newPrice: 12 },
-    { title: "保时捷Macan 2014款 Macan 2.0T", newPrice: 12 }
+    { title: "奔驰", newPrice: 12, brandIndex: 4 },
+    { title: "宝马", newPrice: 12, brandIndex: 3 },
+    { title: "保时捷", newPrice: 12, brandIndex: 5 },
+    { title: "奥迪", newPrice: 12, brandIndex: 1 },
+    { title: "大众", newPrice: 12, brandIndex: 7 },
+    { title: "丰田", newPrice: 12, brandIndex: 16 }
   ],
   gears: [{ title: "手动", value: 1 }, { title: "自动", value: 0.5 }],
   year: 0,

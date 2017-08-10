@@ -26,7 +26,7 @@ module.exports = (body) => {
   var ak_secret = "oYK90eEKXbWzq4TxZgWsJ8kPgGakUQ";
   var options = {
     url:
-      "https://dtplus-cn-shanghai.data.aliyuncs.com/dt_ng_1747801636299161/pai/prediction/projects/daimler_hack/onlinemodels/xlab_m_linearregressio_684991_v1",
+      "https://dtplus-cn-shanghai.data.aliyuncs.com/dt_ng_1747801636299161/pai/prediction/projects/daimler_hack/onlinemodels/xlab_m_linearregressio_684991_v2",
     method: "POST",
     body: JSON.stringify(body),
     headers: {
