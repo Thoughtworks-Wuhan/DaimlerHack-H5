@@ -174,13 +174,13 @@ class Home extends Component {
   };
 
   handleSetRoadHaul = e => {
-    if (/^\d*$/.test(e.target.value)) {
+    if (/^\d*\.?\d*$/.test(e.target.value)) {
       this.props.setRoadHaul(e.target.value);
     }
   };
 
   handleSetPrice = e => {
-    if (/^\d*$/.test(e.target.value)) {
+    if (/^\d*\.?\d*$/.test(e.target.value)) {
       this.props.setNewPrice(e.target.value);
     }
   };
