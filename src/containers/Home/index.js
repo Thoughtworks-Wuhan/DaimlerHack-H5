@@ -28,8 +28,8 @@ const INSURANCE_DATE_MIN = -25;
 const gearBoxMax = 1;
 const gearBoxMin = 0;
 
-const newPriceMax = 576;
-const newPriceMin = 0;
+const NEW_PRICE_MAX = 576;
+const NEW_PRICE_MIN = 0;
 
 const mapStateToProps = state => {
   const normalizedUseDate =
@@ -39,6 +39,11 @@ const mapStateToProps = state => {
   const normalizedInsuranceDate =
     (state.insuranceYear * 12 + state.insuranceMonth - INSURANCE_DATE_MAX) /
     (INSURANCE_DATE_MAX - INSURANCE_DATE_MIN);
+
+  const selectedCar = state.cars.find(car => car.title === state.carType);
+
+  const normalizedNewPrice =
+    (selectedCar.newPrice - NEW_PRICE_MAX) / (NEW_PRICE_MAX - NEW_PRICE_MIN);
 
   return {
     carType: state.carType,
@@ -56,7 +61,7 @@ const mapStateToProps = state => {
           },
           new_price: {
             dataType: 40,
-            dataValue: 0.102
+            dataValue: normalizedNewPrice
           },
           use_date: {
             dataType: 40,
