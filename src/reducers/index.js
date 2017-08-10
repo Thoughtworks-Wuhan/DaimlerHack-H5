@@ -14,7 +14,8 @@ const defaultState = {
   month: 0,
   insuranceYear: 0,
   insuranceMonth: 0,
-  roadHaul: 0
+  roadHaul: 0,
+  newPrice: 0
 };
 
 const hack = (state = defaultState, action) => {
@@ -53,6 +54,11 @@ const hack = (state = defaultState, action) => {
       return {
         ...state,
         roadHaul: action.value
+      };
+    case "SET_NEW_PRICE":
+      return {
+        ...state,
+        newPrice: action.value
       };
     default:
       return state;

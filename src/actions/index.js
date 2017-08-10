@@ -26,7 +26,6 @@ export const setMonth = value => {
   }
 }
 
-
 export const setInsuranceYear = value => {
   return {
     type: 'SET_INSURANCE_YEAR',
@@ -44,6 +43,13 @@ export const setInsuranceMonth = value => {
 export const setRoadHaul = value => {
   return {
     type: 'SET_ROAD_HAUL',
+    value
+  }
+}
+
+export const setNewPrice = value => {
+  return {
+    type: 'SET_NEW_PRICE',
     value
   }
 }

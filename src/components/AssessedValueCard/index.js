@@ -36,7 +36,7 @@ class AssessedValueCard extends PureComponent {
             >
               <h2>您的汽车估值是</h2>
               <div className="card-value">
-                参考价格：{this.props.assessedValue} 元
+                参考价格：{this.props.assessedValue} 万元
               </div>
             </div>}
         </Transition>

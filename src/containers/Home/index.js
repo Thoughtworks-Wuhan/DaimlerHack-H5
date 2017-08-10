@@ -10,7 +10,8 @@ import {
   setMonth,
   setRoadHaul,
   setInsuranceYear,
-  setInsuranceMonth
+  setInsuranceMonth,
+  setNewPrice
 } from "../../actions";
 
 import "./Home.css";
@@ -46,7 +47,7 @@ const mapStateToProps = state => {
   const selectedCar = state.cars.find(car => car.title === state.carType);
 
   const normalizedNewPrice =
-    (selectedCar.newPrice - NEW_PRICE_MIN) / (NEW_PRICE_MAX - NEW_PRICE_MIN);
+    (state.newPrice - NEW_PRICE_MIN) / (NEW_PRICE_MAX - NEW_PRICE_MIN);
 
   const normalizedRoalHaul =
     (state.roadHaul - ROAD_HAUL_MIN) / (ROAD_HAUL_MAX - ROAD_HAUL_MIN);
@@ -63,8 +64,10 @@ const mapStateToProps = state => {
   return {
     carType: state.carType,
     gearType: state.gearType,
+    newPrice: state.newPrice,
     year: state.year,
     month: state.month,
+    roadHaul: state.roadHaul,
     insuranceYear: state.insuranceYear,
     insuranceMonth: state.insuranceMonth,
     normalizedData: {
@@ -116,6 +119,9 @@ const mapDispatchToProps = dispatch => {
     },
     setInsuranceMonth: month => {
       dispatch(setInsuranceMonth(month));
+    },
+    setNewPrice: newPrice => {
+      dispatch(setNewPrice(newPrice));
     }
   };
 };
@@ -129,17 +135,18 @@ class Home extends Component {
   }
 
   handleAssess = () => {
+    const that = this;
     axios
       .post("http://localhost:5555/estimate", this.props.normalizedData)
       .then(function(response) {
+        that.setState({
+          assessedValue: (response.data.outputs[0].outputValue.dataValue * 0.5).toFixed(2)
+        });
         console.log(response);
       })
       .catch(function(error) {
         console.log(error);
       });
-    this.setState({
-      assessedValue: 50000
-    });
   };
 
   handleSetYear = e => {
@@ -169,6 +176,12 @@ class Home extends Component {
   handleSetRoadHaul = e => {
     if (/^\d*$/.test(e.target.value)) {
       this.props.setRoadHaul(e.target.value);
+    }
+  };
+
+  handleSetPrice = e => {
+    if (/^\d*$/.test(e.target.value)) {
+      this.props.setNewPrice(e.target.value);
     }
   };
 
@@ -209,6 +222,20 @@ class Home extends Component {
                   <i className="fa fa-angle-right" aria-hidden="true" />
                 </div>
               </Link>
+            </Col>
+          </Row>
+          <Row className="hack-row hack-input-row">
+            <Col xs={3}>
+              <label htmlFor="">新车价格</label>
+            </Col>
+            <Col xs={9}>
+              <input
+                className="text-input"
+                value={this.props.newPrice}
+                type="text"
+                onChange={this.handleSetPrice}
+              />
+              <span className="unit">万元</span>
             </Col>
           </Row>
           <Row className="hack-row hack-input-row">
