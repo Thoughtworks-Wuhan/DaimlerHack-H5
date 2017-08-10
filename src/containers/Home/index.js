@@ -140,7 +140,7 @@ class Home extends Component {
       .post("http://localhost:5555/estimate", this.props.normalizedData)
       .then(function(response) {
         that.setState({
-          assessedValue: (response.data.outputs[0].outputValue.dataValue * 0.5).toFixed(2)
+          assessedValue: (Number(response.data.outputs[0].outputLabel) * 0.5).toFixed(2)
         });
         console.log(response);
       })
