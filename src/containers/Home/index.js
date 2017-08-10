@@ -19,6 +19,7 @@ import "font-awesome/css/font-awesome.css";
 const mapStateToProps = state => {
   return {
     carType: state.carType,
+    gearType: state.gearType,
     year: state.year,
     month: state.month,
     insuranceYear: state.insuranceYear,
@@ -137,6 +138,21 @@ class Home extends Component {
                 <div className="hack-select-button">
                   <span className="car-type">
                     {this.props.carType}
+                  </span>
+                  <i className="fa fa-angle-right" aria-hidden="true" />
+                </div>
+              </Link>
+            </Col>
+          </Row>
+          <Row className="hack-row hack-input-row">
+            <Col xs={3}>
+              <label htmlFor="">变速箱</label>
+            </Col>
+            <Col xs={9}>
+              <Link to="/gear-choose">
+                <div className="hack-select-button">
+                  <span className="car-type">
+                    {this.props.gearType}
                   </span>
                   <i className="fa fa-angle-right" aria-hidden="true" />
                 </div>

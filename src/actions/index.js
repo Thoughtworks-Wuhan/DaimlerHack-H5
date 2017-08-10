@@ -5,6 +5,13 @@ export const addCarType = value => {
   }
 }
 
+export const setGearType = value => {
+  return {
+    type: 'SET_GEAR_TYPE',
+    value
+  }
+}
+
 export const setYear = value => {
   return {
     type: 'SET_YEAR',
