@@ -9,7 +9,7 @@ const defaultState = {
     { title: "大众", newPrice: 12, brandIndex: 7 },
     { title: "丰田", newPrice: 12, brandIndex: 16 }
   ],
-  gears: [{ title: "手动", value: 1 }, { title: "自动", value: 0.5 }],
+  gears: [{ title: "手动", value: 2 }, { title: "自动", value: 1 }],
   year: 0,
   month: 0,
   insuranceYear: 0,
