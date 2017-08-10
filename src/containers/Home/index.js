@@ -25,8 +25,8 @@ const ROAD_HAUL_MIN = 0;
 const INSURANCE_DATE_MAX = 33;
 const INSURANCE_DATE_MIN = -25;
 
-const gearBoxMax = 1;
-const gearBoxMin = 0;
+const GEAR_BOX_MAX = 1;
+const GEAR_BOX_MIN = 0;
 
 const NEW_PRICE_MAX = 576;
 const NEW_PRICE_MIN = 0;
@@ -47,6 +47,10 @@ const mapStateToProps = state => {
 
   const normalizedRoalHaul =
     (state.roadHaul - ROAD_HAUL_MAX) / (ROAD_HAUL_MAX - ROAD_HAUL_MIN);
+
+  const selectedGear = state.gears.find(gear => gear.title === state.gearType);
+
+  const normalizedGearBox = (selectedGear.value - GEAR_BOX_MAX) / (GEAR_BOX_MAX - GEAR_BOX_MIN);
 
   return {
     carType: state.carType,
@@ -73,6 +77,10 @@ const mapStateToProps = state => {
           insurance_date: {
             dataType: 40,
             dataValue: normalizedInsuranceDate
+          },
+          gear_box: {
+            dateType: 40,
+            dataValue: normalizedGearBox
           }
         }
       ]
