@@ -36,28 +36,28 @@ const BRAND_INDEX_MIN = 0;
 
 const mapStateToProps = state => {
   const normalizedUseDate =
-    (state.year * 12 + state.month - USE_DATE_MAX) /
+    (state.year * 12 + state.month - USE_DATE_MIN) /
     (USE_DATE_MAX - USE_DATE_MIN);
 
   const normalizedInsuranceDate =
-    (state.insuranceYear * 12 + state.insuranceMonth - INSURANCE_DATE_MAX) /
+    (state.insuranceYear * 12 + state.insuranceMonth - INSURANCE_DATE_MIN) /
     (INSURANCE_DATE_MAX - INSURANCE_DATE_MIN);
 
   const selectedCar = state.cars.find(car => car.title === state.carType);
 
   const normalizedNewPrice =
-    (selectedCar.newPrice - NEW_PRICE_MAX) / (NEW_PRICE_MAX - NEW_PRICE_MIN);
+    (selectedCar.newPrice - NEW_PRICE_MIN) / (NEW_PRICE_MAX - NEW_PRICE_MIN);
 
   const normalizedRoalHaul =
-    (state.roadHaul - ROAD_HAUL_MAX) / (ROAD_HAUL_MAX - ROAD_HAUL_MIN);
+    (state.roadHaul - ROAD_HAUL_MIN) / (ROAD_HAUL_MAX - ROAD_HAUL_MIN);
 
   const selectedGear = state.gears.find(gear => gear.title === state.gearType);
 
   const normalizedGearBox =
-    (selectedGear.value - GEAR_BOX_MAX) / (GEAR_BOX_MAX - GEAR_BOX_MIN);
+    (selectedGear.value - GEAR_BOX_MIN) / (GEAR_BOX_MAX - GEAR_BOX_MIN);
 
   const normalizedBrandIndex =
-    (selectedCar.brandIndex - BRAND_INDEX_MAX) /
+    (selectedCar.brandIndex - BRAND_INDEX_MIN) /
     (BRAND_INDEX_MAX - BRAND_INDEX_MIN);
 
   return {
@@ -87,7 +87,7 @@ const mapStateToProps = state => {
             dataValue: normalizedInsuranceDate
           },
           gearbox: {
-            dateType: 40,
+            dataType: 40,
             dataValue: normalizedGearBox
           },
           brand_index: {
