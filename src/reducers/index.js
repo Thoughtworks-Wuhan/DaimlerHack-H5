@@ -2,12 +2,12 @@ const defaultState = {
   carType: "奔驰",
   gearType: "手动",
   cars: [
-    { title: "奔驰", newPrice: 12, brandIndex: 4 },
-    { title: "宝马", newPrice: 12, brandIndex: 3 },
-    { title: "保时捷", newPrice: 12, brandIndex: 5 },
-    { title: "奥迪", newPrice: 12, brandIndex: 1 },
-    { title: "大众", newPrice: 12, brandIndex: 7 },
-    { title: "丰田", newPrice: 12, brandIndex: 16 }
+    { title: "奔驰", brandIndex: 4 },
+    { title: "宝马", brandIndex: 3 },
+    { title: "保时捷", brandIndex: 5 },
+    { title: "奥迪", brandIndex: 1 },
+    { title: "大众", brandIndex: 7 },
+    { title: "丰田", brandIndex: 16 }
   ],
   gears: [{ title: "手动", value: 2 }, { title: "自动", value: 1 }],
   year: 0,
