@@ -19,8 +19,8 @@ import "font-awesome/css/font-awesome.css";
 const USER_DATE_MAX = 119;
 const USER_DATE_MIN = 0;
 
-const roadHaulMax = 35;
-const roadHaulMin = 0;
+const ROAD_HAUL_MAX = 35;
+const ROAD_HAUL_MIN = 0;
 
 const INSURANCE_DATE_MAX = 33;
 const INSURANCE_DATE_MIN = -25;
@@ -45,6 +45,9 @@ const mapStateToProps = state => {
   const normalizedNewPrice =
     (selectedCar.newPrice - NEW_PRICE_MAX) / (NEW_PRICE_MAX - NEW_PRICE_MIN);
 
+  const normalizedRoalHaul =
+    (state.roadHaul - ROAD_HAUL_MAX) / (ROAD_HAUL_MAX - ROAD_HAUL_MIN);
+
   return {
     carType: state.carType,
     gearType: state.gearType,
@@ -57,7 +60,7 @@ const mapStateToProps = state => {
         {
           roal_haul: {
             dataType: 40,
-            dataValue: 0.1036
+            dataValue: normalizedRoalHaul
           },
           new_price: {
             dataType: 40,
@@ -107,28 +110,7 @@ class Home extends Component {
 
   handleAssess = () => {
     axios
-      .post("http://localhost:5555/estimate", {
-        inputs: [
-          {
-            roal_haul: {
-              dataType: 40,
-              dataValue: 0.1036
-            },
-            new_price: {
-              dataType: 40,
-              dataValue: 0.102
-            },
-            use_date: {
-              dataType: 40,
-              dataValue: 0.254
-            },
-            insurance_date: {
-              dataType: 40,
-              dataValue: 0.198
-            }
-          }
-        ]
-      })
+      .post("http://localhost:5555/estimate", this.props.normalizedData)
       .then(function(response) {
         console.log(response);
       })
