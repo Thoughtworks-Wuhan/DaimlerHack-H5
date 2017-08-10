@@ -15,6 +15,7 @@ app.use(
 app.use(cors());
 
 app.post("/estimate", function(req, res) {
+  console.log(JSON.stringify(req.body));
   res.send(estimate(req.body));
 });
 

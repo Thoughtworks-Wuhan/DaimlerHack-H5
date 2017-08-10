@@ -183,7 +183,7 @@ class Home extends Component {
           </Row>
           <Row className="hack-row hack-input-row">
             <Col xs={3}>
-              <label htmlFor="">车型选择</label>
+              <label htmlFor="">品牌选择</label>
             </Col>
             <Col xs={9}>
               <Link to="/car-choose">
