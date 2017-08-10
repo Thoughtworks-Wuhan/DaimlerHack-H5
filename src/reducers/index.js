@@ -8,11 +8,11 @@ const defaultState = {
     { title: "奥迪Q5 2013款 40 TFSI 技术型" },
     { title: "保时捷Macan 2014款 Macan 2.0T" }
   ],
-  year: "",
-  month: "",
-  insuranceYear: "",
-  insuranceMonth: "",
-  roadHaul: ""
+  year: 0,
+  month: 0,
+  insuranceYear: 0,
+  insuranceMonth: 0,
+  roadHaul: 0
 };
 
 const hack = (state = defaultState, action) => {

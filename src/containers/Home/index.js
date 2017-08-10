@@ -16,14 +16,54 @@ import {
 import "./Home.css";
 import "font-awesome/css/font-awesome.css";
 
+const useDateMax = 119;
+const useDateMin = 0;
+
+const roadHaulMax = 35;
+const roadHaulMin = 0;
+
+const insuranceDateMax = 33;
+const insuranceDateMin = -25;
+
+const gearBoxMax = 1;
+const gearBoxMin = 0;
+
+const newPriceMax = 576;
+const newPriceMin = 0;
+
 const mapStateToProps = state => {
+  const normalizedUseDate =
+    (state.year * 12 + state.month - useDateMax) / (useDateMax - useDateMin);
+
   return {
     carType: state.carType,
     gearType: state.gearType,
     year: state.year,
     month: state.month,
     insuranceYear: state.insuranceYear,
-    insuranceMonth: state.insuranceMonth
+    insuranceMonth: state.insuranceMonth,
+    normalizedData: {
+      inputs: [
+        {
+          roal_haul: {
+            dataType: 40,
+            dataValue: 0.1036
+          },
+          new_price: {
+            dataType: 40,
+            dataValue: 0.102
+          },
+          use_date: {
+            dataType: 40,
+            dataValue: normalizedUseDate
+          },
+          insurance_date: {
+            dataType: 40,
+            dataValue: 0.198
+          }
+        }
+      ]
+    }
   };
 };
 
