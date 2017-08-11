@@ -130,7 +130,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      assessedValue: -1
+      assessedValue: 0
     };
   }
 
