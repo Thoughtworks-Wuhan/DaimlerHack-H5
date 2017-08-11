@@ -8,5 +8,5 @@ services:
   proxy:
     build: ./server
     ports: 
-     - "5555:5555"
+     - "8083:8083"
     image: benweizhu/hackh5proxy

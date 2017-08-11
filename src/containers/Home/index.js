@@ -137,7 +137,7 @@ class Home extends Component {
   handleAssess = () => {
     const that = this;
     axios
-      .post("http://localhost:5555/estimate", this.props.normalizedData)
+      .post("http://localhost:8083/estimate", this.props.normalizedData)
       .then(function(response) {
         that.setState({
           assessedValue: (response.data.outputs[0].outputValue.dataValue * 0.5).toFixed(2)
